@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sociologia Digital – Mulheres na Ciência</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="menu" class="screen on">
+    <div class="hero">
+      <img class="logo" src="img/logo.png" alt="Sociologia Digital">
+      <h1>Mulheres na <span>Ciência</span></h1>
+      <p class="sub">Jogo de tabuleiro • Sociologia Digital • CEFET/RJ</p>
+      <p class="choose">Escolha o tabuleiro</p>
+      <div id="modes"></div>
+      <div class="how">
+        🎲 Jogue o dado &nbsp;•&nbsp; ⌨️ ande com as setinhas &nbsp;•&nbsp; <b>?</b> responda a pergunta &nbsp;•&nbsp; <b>⚡</b> atalho (+3 casas)<br>
+        Errou a pergunta? Você volta para onde estava!
+      </div>
+    </div>
+  </div>
+
+=  <div id="pick" class="screen">
+    <h2 style="color:var(--y)" id="ph"></h2>
+    <div id="chars"></div>
+    <div id="pd"></div>
+    <p id="pinfo" style="font-weight:700"></p>
+    <button id="pgo" class="btn" style="display:none" onclick="startBoard()">Ir para o tabuleiro →</button>
+  </div>
+
+  <div id="game" class="screen">
+    <div id="top">
+      <div id="turn"></div>
+      <div>
+        <button class="btn" onclick="mute=!mute;this.textContent=mute?'🔇 Som':'🔊 Som'">🔊 Som</button>
+        <button class="btn" onclick="show('menu')">← Menu</button>
+      </div>
+    </div>
+    <div id="sc" style="margin:2px"></div>
+    <div id="gl">
+      <div id="bw">
+        <div id="bd"></div>
+        <div id="ov"></div>
+      </div>
+      <div id="side">
+        <div id="gd"></div>
+        <p id="info" style="min-height:3em;font-weight:700;margin:0"></p>
+        <div class="pad">
+          <div><button data-k="ArrowUp">▲</button></div>
+          <div>
+            <button data-k="ArrowLeft">◀</button>
+            <button data-k="ArrowDown">▼</button>
+            <button data-k="ArrowRight">▶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="qm" class="modal">
+    <div class="card">
+      <div id="who" style="font-weight:800;color:var(--b1)"></div>
+      <h2 id="qt"></h2>
+      <div id="qo"></div>
+      <div style="text-align:right">
+        <button class="btn" id="qn" style="display:none;background:var(--b1);color:#fff" onclick="endQ()">Continuar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="wm" class="modal">
+    <div class="card" style="text-align:center">
+      <h1 id="wt"></h1>
+      <p id="wp"></p>
+      <button class="btn" style="background:var(--b1);color:#fff" onclick="document.getElementById('wm').classList.remove('on');show('menu')">Voltar ao menu</button>
+    </div>
+  </div>
+
+  <script src="perguntas.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
