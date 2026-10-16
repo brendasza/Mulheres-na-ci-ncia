@@ -20,7 +20,7 @@ const shuf = a => {
 
 let G;            // estado do jogo atual
 let qi = [];      // fila embaralhada de perguntas
-let mute = false; // som ligado/desligado
+let mute = false; 
 let cur;          // contexto de áudio
 let pd, gd;       // dados (sorteio inicial e dado do jogo)
 
@@ -230,7 +230,7 @@ function hint() {
   info(`Tirou ${G.steps}! Passos restantes: ${G.steps} — aperte ${AR[need()]}`);
 }
 
-// Move a personagem p para a casa np (com animação de caminhada)
+// Move a personagem p para a casa np 
 function move(p, np, ms) {
   const a = G.path[p.pos];
   const b = G.path[np];
@@ -309,7 +309,7 @@ function ask() {
       const ok = b.dataset.ok == "1";
       $("qo").querySelectorAll(".opt").forEach(x => {
         x.disabled = true;
-        if (x.dataset.ok == "1") x.classList.add("ok"); // resposta certa fica verde
+        if (x.dataset.ok == "1") x.classList.add("ok"); 
       });
       if (ok) {
         G.pl[G.turn].pts += 10; // pontos por acerto
@@ -322,7 +322,7 @@ function ask() {
       $("qn").style.display = "inline-block";
     };
   });
-  $("ov").style.opacity = 0; // esconde as personagens enquanto a pergunta aparece
+  $("ov").style.opacity = 0; 
   $("qm").classList.add("on");
 }
 
@@ -331,7 +331,6 @@ function endQ() {
   $("ov").style.opacity = 1;
   const p = G.pl[G.turn];
   if (G.wrong && p.pos > G.start) {
-    // errou: volta para a casa onde estava antes de jogar o dado
     G.wrong = false;
     G.phase = "back";
     info("Errou! Volta " + (p.pos - G.start) + " casa(s)...");
